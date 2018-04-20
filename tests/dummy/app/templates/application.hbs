@@ -1,3 +1,33 @@
-<h2 id="title">Welcome to Ember</h2>
+<h2 class='red' id="title">Ember Collapsible Columns</h2>
 
-{{outlet}}
+Container:
+
+{{#ec-container collapsedWidth=1 allowMultCollapse=true allowLastColCollapse=false as |re|}}
+  {{#re.column class='blue' as |c|}}
+    <div> Admbitioni dedisse scripsisse iudicaretur. </div>
+  {{/re.column}}
+  {{#re.column class='red' as |c|}}
+    <div> Admbitioni dedisse scripsisse iudicaretur. Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum. </div>
+    {{custom-btn action=c.onCustomToggle}}
+  {{/re.column}}
+  {{#re.column class='blue' as |c|}}
+    <div> Cras mattis iudicium purus sit amet fermentum. Donec sed odio operae, eu vulputate felis rhoncus. Praeterea iter est quasdam res quas ex communi. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi concilium totius Galliae in diem certam indicere. Cras mattis iudicium purus sit amet fermentum.  </div>
+  {{/re.column}}
+{{/ec-container}}
+
+<br />
+<br />
+<br />
+
+<button {{action 'add'}}>Add</button>
+<button {{action 'remove'}}>Remove</button>
+
+items: {{items.length}}
+
+{{#ec-container collapsedWidth=10 allowMultCollapse=true allowLastColCollapse=true as |re|}}
+  {{#each items as |item|}}
+    {{#re.column class='blue' as |c|}}
+      <div> Foo </div>
+    {{/re.column}}
+  {{/each}}
+{{/ec-container}}

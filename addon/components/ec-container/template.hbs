@@ -1,0 +1,8 @@
+{{yield (hash
+    column=(
+    component 'ec-container/ec-column'
+    collapsedWidth=collapsedWidth
+    onToggle=(action 'columnToggle')
+    onColumnAdded=(action 'columnAdded')
+    onColumnRemoved=(action 'columnRemoved')
+  ))}}

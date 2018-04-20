@@ -1,0 +1,12 @@
+{{#if useInternalButton}}
+  {{ec-container/ec-button class='default-position'
+                             isCollapsed=isCollapsed
+                             onClick=(action 'toggleColumnVisibility')}}
+{{/if}}
+
+{{yield (hash button=(component 'ec-container/ec-button'
+                isCollapsed=isCollapsed
+                onRender=(action 'registerButton')
+                onClick=(action 'toggleColumnVisibility'))
+              onCustomToggle=(action 'toggleColumnVisibility')
+)}}
