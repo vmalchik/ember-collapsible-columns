@@ -1,1 +1,9 @@
-@import 'ember-collapsible-columns/manifest';
+.r {
+  color: red;
+}
+
+.ec-column {
+  padding: 0 20px;
+  border: 1px solid black;
+  overflow: hidden;
+}
